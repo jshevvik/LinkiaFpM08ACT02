@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiente"
+    tools:context=".MainActivity">
+
+    <!-- Guideline vertical para la separación izquierda (20% del ancho) -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <!-- Guideline vertical para la separación derecha (80% del ancho) -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <!-- Guideline horizontal para el margen superior (10% de la altura) -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <!-- Sección de la izquierda: Icono y Título "Login" -->
+
+    <LinearLayout
+        android:id="@+id/login_left_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/guideline_start"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_top">
+
+        <!-- Título de Login -->
+        <ImageView
+            android:id="@+id/login_icon"
+            android:layout_width="202dp"
+            android:layout_height="160dp"
+            android:contentDescription="@string/login_icon_image"
+            android:src="@drawable/login_principal" />
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="118dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/rubik_bold"
+            android:gravity="center_horizontal"
+            android:text="@string/login_string"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="38sp"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <!-- Sección de la derecha: Campos de Usuario y Contraseña -->
+    <LinearLayout
+        android:id="@+id/form_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_top">
+
+        <!-- Campo de Usuario -->
+        <LinearLayout
+            android:id="@+id/username_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Icono de Usuario -->
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/user_icon_image"
+                android:src="@drawable/login_user" />
+
+            <!-- EditText para el Usuario -->
+            <EditText
+                android:id="@+id/login_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints="@string/login_hint_user"
+                android:fontFamily="@font/rubik_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/login_hint_user"
+                android:inputType="text"
+                android:textColor="@color/azul_oscuro"
+                android:textColorHint="@color/azul_oscuro"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Campo de Contraseña -->
+        <LinearLayout
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Icono de Contraseña -->
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/password_icon_image"
+                android:src="@drawable/login_pass" />
+
+            <!-- EditText para la Contraseña -->
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints="@string/login_hint_password"
+                android:fontFamily="@font/rubik_bold"
+                android:gravity="center_vertical"
+                android:hint="@string/login_hint_password"
+                android:inputType="textPassword"
+                android:textColor="@color/azul_oscuro"
+                android:textColorHint="@color/azul_oscuro"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Boton de Login -->
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="228dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/azul_oscuro"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/login_button_text"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_layout"
+        app:layout_constraintWidth_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

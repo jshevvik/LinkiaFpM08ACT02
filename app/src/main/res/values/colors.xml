@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="azul_claro">#4755FA</color>
+    <color name="azul_oscuro">#3f51b1</color>
+    <color name="gradiente_1">#cc6b8e</color>
+    <color name="gradiente_2">#f18271</color>
+    <color name="gradiente_3">#f3a469</color>
+    <color name="gradiente_4">#f7c978</color>
+
+
+</resources>
